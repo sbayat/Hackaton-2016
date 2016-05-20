@@ -2,27 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0d80e86-6649-49ee-a564-b91616cf3aae" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/division.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ing/hackaton/exact/api/system/Me.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ing/hackaton/exact/api/system/Response.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ing/hackaton/Greeting.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gs-rest-service-0.1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/gs-rest-service-0.1.0.jar.original" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ing/hackaton/AccountingSoftController.class" afterPath="$PROJECT_DIR$/target/classes/ing/hackaton/AccountingSoftController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ing/hackaton/Application.class" afterPath="$PROJECT_DIR$/target/classes/ing/hackaton/Application.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ing/hackaton/StringResponse.class" afterPath="$PROJECT_DIR$/target/classes/ing/hackaton/StringResponse.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ing/hackaton/ExactController.java" afterPath="$PROJECT_DIR$/src/main/java/ing/hackaton/ExactController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ing/hackaton/exact/api/system/Division.java" afterPath="$PROJECT_DIR$/src/main/java/ing/hackaton/exact/api/system/Division.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ing/hackaton/exact/service/ExactService.java" afterPath="$PROJECT_DIR$/src/main/java/ing/hackaton/exact/service/ExactService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ing/hackaton/model/DivisionDTO.java" afterPath="$PROJECT_DIR$/src/main/java/ing/hackaton/model/DivisionDTO.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ing/hackaton/AccountingSoftController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ing/hackaton/Application.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ing/hackaton/StringResponse.class" afterPath="" />
     </list>
     <ignored path="gs-rest-service.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -882,8 +865,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1463742595570</updated>
-      <workItem from="1463742599385" duration="8624000" />
+      <workItem from="1463742599385" duration="8664000" />
     </task>
+    <task id="LOCAL-00001" summary="exact json mapping">
+      <created>1463757491779</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1463757491779</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -919,7 +910,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8624000" />
+    <option name="totallyTimeSpent" value="8664000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -985,6 +976,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="exact json mapping" />
+    <option name="LAST_COMMIT_MESSAGE" value="exact json mapping" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
