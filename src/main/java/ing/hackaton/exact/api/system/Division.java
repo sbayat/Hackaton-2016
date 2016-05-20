@@ -12,4 +12,9 @@ public class Division {
     private String description;
 
     private Integer code;
+
+    public Division(Integer code, String description) {
+        this.code = code;
+        this.description = description;
+    }
 }

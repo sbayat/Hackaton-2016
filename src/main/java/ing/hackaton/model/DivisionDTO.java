@@ -9,7 +9,7 @@ public class DivisionDTO {
 
     private Integer code;
 
-    public DivisionDTO(String description, Integer code) {
+    public DivisionDTO(Integer code, String description) {
         this.description = description;
         this.code = code;
     }

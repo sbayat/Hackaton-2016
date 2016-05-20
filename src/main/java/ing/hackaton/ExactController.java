@@ -1,6 +1,7 @@
 package ing.hackaton;
 
 import ing.hackaton.exact.api.system.Division;
+import ing.hackaton.exact.api.system.Me;
 import ing.hackaton.exact.model.TokenETO;
 import ing.hackaton.exact.service.ExactService;
 import ing.hackaton.model.DivisionDTO;
@@ -39,14 +40,16 @@ public class ExactController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/exact/divisions")
     public List<DivisionDTO> getDivisions(@RequestHeader(value="token") String token) throws IOException {
-        Division division = exactService.getCurrentDivision(token);
+        Me me = exactService.getCurrentDivision(token);
 
-        List<Division> devisions = exactService.getDevisions(token, division);
+        //if ()
+
+        List<Division> divisions = exactService.getDevisions(token, me);
 
         List<DivisionDTO> divisionDTOs = new ArrayList<>();
 
-        for (Division devision : devisions) {
-            DivisionDTO divisionDTO = new DivisionDTO(devision.getDescription(), devision.getCode());
+        for (Division division : divisions) {
+            DivisionDTO divisionDTO = new DivisionDTO(division.getCode(), division.getDescription());
             divisionDTOs.add(divisionDTO);
         }
 

@@ -3,6 +3,8 @@ package ing.hackaton.exact.service;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ing.hackaton.exact.api.system.Division;
+import ing.hackaton.exact.api.system.Me;
+import ing.hackaton.exact.api.system.Response;
 import ing.hackaton.exact.model.DivisionETO;
 import ing.hackaton.exact.model.TokenETO;
 import org.apache.http.HttpResponse;
@@ -19,6 +21,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 
@@ -69,8 +72,8 @@ public class ExactService {
         return tokenETO;
     }
 
-    public List<Division> getDevisions(String token, Division division) throws IOException {
-        String url = EXACT_ONLINE_URL + "/v1/" + division.getCode() + "/system/Divisions";
+    public List<Division> getDevisions(String token, Me division) throws IOException {
+        String url = EXACT_ONLINE_URL + "/v1/" + division.getCurrentDivision() + "/system/Divisions";
 
         HttpClient client = HttpClientBuilder.create().build();
         HttpGet request = new HttpGet(url);
@@ -88,14 +91,18 @@ public class ExactService {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
-            DivisionETO divisionETO = objectMapper.readValue(json, DivisionETO.class);
-            results = divisionETO.getD().getResults();
+            //TODO find a better way to map to Entity
+            Response ro = objectMapper.readValue(json, Response.class);
+            results = new ArrayList<Division>();
+            for (LinkedHashMap lh : ro.getD().getResults()) {
+                results.add(new Division((Integer) lh.get("Code"), (String) lh.get("Description")));
+            }
         }
 
         return results;
     }
 
-    public Division getCurrentDivision(String token) throws IOException {
+    public Me getCurrentDivision(String token) throws IOException {
 
         final String url = EXACT_ONLINE_URL + "/v1/current/Me";
 
@@ -108,15 +115,16 @@ public class ExactService {
 
         HttpResponse response = client.execute(request);
 
-        Division division = null;
+        Me division = null;
         if (response.getStatusLine().getStatusCode() == HttpStatus.OK.value()) {
             String json = EntityUtils.toString(response.getEntity());
 
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
-            DivisionETO divisionETO = objectMapper.readValue(json, DivisionETO.class);
-            division = divisionETO.getD().getResults().get(0);
+            //TODO find a better way to map to Entity
+            Response ro = objectMapper.readValue(json, Response.class);
+            division = new Me((Integer) ro.getD().getResults().get(0).get("CurrentDivision"));
         }
 
         return division;
