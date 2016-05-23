@@ -1,6 +1,8 @@
 package ing.hackaton.exact.api;
 
 import lombok.Getter;
+import lombok.Setter;
+import org.springframework.http.HttpStatus;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -9,19 +11,11 @@ import java.util.List;
  * Created by hosinglee on 20/05/16.
  */
 @Getter
-public class Response {
+@Setter
+public class Response<T> {
 
-    private Result d;
+    private HttpStatus httpStatus;
 
-    public List<LinkedHashMap> getResults() {
-        return d.getResults();
-    }
+    private List<T> results;
 
-    public class Result {
-        private List<LinkedHashMap> results;
-
-        public List<LinkedHashMap> getResults() {
-            return results;
-        }
-    }
 }
