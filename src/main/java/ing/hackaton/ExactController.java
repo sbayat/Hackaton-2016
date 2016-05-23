@@ -2,12 +2,11 @@ package ing.hackaton;
 
 import ing.hackaton.exact.api.system.Division;
 import ing.hackaton.exact.api.system.Me;
-import ing.hackaton.exact.model.TokenETO;
+import ing.hackaton.exact.api.Token;
 import ing.hackaton.exact.service.ExactService;
+import ing.hackaton.exception.BadRequestException;
 import ing.hackaton.model.DivisionDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -26,16 +25,14 @@ public class ExactController {
     private ExactService exactService;
 
     @RequestMapping(method = RequestMethod.GET, path = "/exact/token/{code}")
-    public ResponseEntity<?> getAccessToken(@PathVariable String code) throws IOException {
-        TokenETO accessToken = exactService.getAccessToken(code);
+    public Token getAccessToken(@PathVariable String code) throws IOException {
+        Token accessToken = exactService.getAccessToken(code);
 
-        if (accessToken != null) {
-            //TODO transform accessToken to DTO
-            return new ResponseEntity<>(accessToken, HttpStatus.ACCEPTED);
-        } else {
-            // TODO is this the correct http status?
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        if (accessToken == null) {
+            throw new BadRequestException();
         }
+
+        return accessToken;
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/exact/divisions")

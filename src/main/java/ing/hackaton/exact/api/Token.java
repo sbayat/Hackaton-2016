@@ -1,4 +1,4 @@
-package ing.hackaton.exact.model;
+package ing.hackaton.exact.api;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +8,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class TokenETO {
+public class Token {
 
     private String access_token;
 

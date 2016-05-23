@@ -1,4 +1,4 @@
-package ing.hackaton.exact.api.system;
+package ing.hackaton.exact.api;
 
 import lombok.Getter;
 
@@ -12,6 +12,10 @@ import java.util.List;
 public class Response {
 
     private Result d;
+
+    public List<LinkedHashMap> getResults() {
+        return d.getResults();
+    }
 
     public class Result {
         private List<LinkedHashMap> results;
